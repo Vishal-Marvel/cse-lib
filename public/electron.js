@@ -1,10 +1,10 @@
 // Modules to control application life and create native browser window
 const { app, BrowserWindow } = require('electron');
-// const setupEvents = require('../setUp')
-// if (setupEvents.handleSquirrelEvent()) {
-//     // squirrel event handled and app will exit in 1000ms, so don't do anything else
-//     return;
-// }
+const setupEvents = require('../installers/setupEvents')
+if (setupEvents.handleSquirrelEvent()) {
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
+}
 
 const path = require('path');
 
@@ -98,7 +98,7 @@ app.on('activate', function () {
 //     }
 //     const ChildProcess = require('child_process');
 //     const path = require('path');
-//     const appFolder = path.resolve(process.execPath, '..');
+//     const appFolder = path.resolve(process.execPath, '.');
 //     const rootAtomFolder = path.resolve(appFolder, '..');
 //     const updateDotExe = path.resolve(path.join(rootAtomFolder, 'Update.exe'));
 //     const exeName = path.basename(process.execPath);

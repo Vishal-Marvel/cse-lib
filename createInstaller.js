@@ -19,7 +19,7 @@ function getInstallerConfig () {
         noMsi: true,
         outputDirectory: path.join(outPath, 'windows-installer'),
         exe: 'CSELibrary.exe',
-        setupExe: 'CSELibrary.exe',
+        setupExe: 'CSELibraryInstaller.exe',
         setupIcon: path.join(rootPath, 'public', 'logo.ico')
     })
 }
