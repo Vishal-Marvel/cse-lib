@@ -1,26 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import Home from "./pages/Home";
+import AddBook from "./pages/AddBook";
+import {NavBar} from "./components/NavBar";
+
+// import bg from "/public/bg.png"
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <BrowserRouter>
+            <div style={{backgroundImage: `url(bg.png)`, backgroundSize: "cover", backgroundRepeat: "no-repeat"}}
+                 className={"h-screen font-sans"}>
+                <NavBar/>
+
+                <Routes>
+
+                    <Route path={"/"} element={<Home/>}/>
+                    <Route path={"/addBook"} element={<AddBook/>}/>
+
+                </Routes>
+            </div>
+        </BrowserRouter>
+    );
 }
 
 export default App;
